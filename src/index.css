@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+  --bg-color: #0b1120;
+  --text-color: #f1f5f9;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary: #1e293b;
+  --negative: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+  user-select: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: radial-gradient(circle at bottom, #ffd781 0%, #3da6fc 100%);
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 20px rgba(255, 213, 23, 0.5);
+  background: linear-gradient(to top, #7e3a03, #ffbc2d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  border: none;
+  align-content: center;
+  justify-content: center;
+  width: 15rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 16px;
+  font-family: 'Outfit', sans-serif;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/png/default/ui/menu/button_primary_normal.png');
+}
+
+.button.secondary {
+  background-image: url('/assets/png/default/ui/menu/button_secondary_normal.png');
+}
+
+.button:hover {
+  background-color: transparent;
+  background-image: url('/assets/png/default/ui/menu/button_primary_hover.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 6px 15px rgba(255, 238, 0, 0.6));
+}
+
+.button.secondary:hover {
+  background-image: url('/assets/png/default/ui/menu/button_primary_disabled.png');
+  filter: drop-shadow(0 6px 15px rgba(255, 174, 0, 0.6));
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.panel {
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/png/default/ui/menu/panel_menu.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
